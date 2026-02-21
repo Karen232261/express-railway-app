@@ -1,7 +1,9 @@
 const express = require("express");
 const pgp = require("pg-promise")();
 
-const db = pgp(process.env.DATABASE_URL || "postgres://postgres:password123@127.0.0.1:5432/expresshelloworld_dev");
+const connectionString = process.env.DATABASE_URL || "postgres://postgres:password123@127.0.0.1:5432/expresshelloworld_dev";
+
+const db = pgp(connectionString);
 
 const router = express.Router();
 
